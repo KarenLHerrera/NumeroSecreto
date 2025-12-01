@@ -1,13 +1,18 @@
 let numeroSecreto = Math.floor(Math.random() * 100) + 1;
 let intentos = 0;
 
+const inputNumero = document.getElementById("numeroInput");
+const mensaje = document.getElementById("mensaje");
+const intentosElemento = document.getElementById("intentos");
+
 function verificarNumero() {
-  const inputNumero = document.getElementById("numeroInput");
-  const mensaje = document.getElementById("mensaje");
   const numeroIngresado = parseInt(inputNumero.value);
-  const intentosElemento = document.getElementById("intentos");
-  intentos++;
-  intentosElemento.innerText = intentos;
+  
+  if (isNaN(numeroIngresado) || numeroIngresado < 1 || numeroIngresado > 100) {
+    mensaje.innerText = "Por favor, ingresa un número válido entre 1 y 100.";
+    mensaje.style.color = "red";
+  }else{
+
   if (numeroIngresado === numeroSecreto) {
     mensaje.innerText = `¡Felicidades! Has adivinado el número ${numeroSecreto} en ${intentos} intentos.`;
     mensaje.style.color = "green";
@@ -20,6 +25,9 @@ function verificarNumero() {
     mensaje.innerText = "El número es menor. Intenta de nuevo.";
     mensaje.style.color = "red";
   }
+  intentos++;
+  intentosElemento.innerText = intentos;
+}
 }
 document
   .getElementById("formJuego")
@@ -28,7 +36,6 @@ document
     verificarNumero();
   });
 document.getElementById("numeroInput").focus();
-
 
 // reinicio mi juego
 document.getElementById("btnReiniciar").addEventListener("click", function () {
