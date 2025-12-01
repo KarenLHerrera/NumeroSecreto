@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>JUEGO DOM</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <h1>Numero Oculto</h1>
+        <p>Intenta adivinar el numero oculto entre 1 y 100</p>
+        <form id="formJuego" class="formJuego">
+            <input class ="numeroInput" type="number" id="numeroInput" placeholder="Ingresa tu numero" required>
+            <button type="submit" id="btnVerificar" class="verificar">Adivinar</button>
+            <p class="mensaje" id="mensaje"></p>
+            <p>Cantidad de Intentos: <span id="intentos">0</span></p>
+        </form>
+        <br>
+        <br>
+        <button class="reiniciar" id="btnReiniciar">Reiniciar Juego!</button>
+    </main>
+    <footer></footer>
+    <script src="/js/numero.js"></script>
+</body>
+</html>
