@@ -9,12 +9,12 @@ function verificarNumero() {
   const numeroIngresado = parseInt(inputNumero.value);
   
   if (isNaN(numeroIngresado) || numeroIngresado < 1 || numeroIngresado > 100) {
-    mensaje.innerText = "Por favor, ingresa un número válido entre 1 y 100.";
+    mensaje.innerText = "Por favor ingresa un número entre 1 y 100.";
     mensaje.style.color = "red";
   }else{
 
   if (numeroIngresado === numeroSecreto) {
-    mensaje.innerText = `¡Felicidades! Has adivinado el número ${numeroSecreto} en ${intentos} intentos.`;
+    mensaje.innerText = `Felicidades! Has adivinado el número ${numeroSecreto} en ${intentos} intentos.`;
     mensaje.style.color = "green";
     document.getElementById("btnVerificar").disabled = true;
     document.getElementById("numeroInput").disabled = true;
