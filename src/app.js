@@ -3,6 +3,9 @@ const path = require('path');
 const fs = require('fs').promises;
 const app = express();
 
+// Importar rutas
+const tareasRoutes = require('./routes/tareasRoutes');
+
 const PORT = process.env.PORT || 3000;
 const PUNTAJES_FILE = path.join(__dirname, '..', 'data', 'puntajes.json');
 
@@ -12,6 +15,10 @@ app.use(express.static(path.join(__dirname, 'views')));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+
+app.get('/tareas', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'admintareas.html'));
 });
 
 // Endpoint para obtener puntajes
@@ -65,6 +72,9 @@ app.post('/api/puntajes', async (req, res) => {
         res.status(500).json({ error: 'Error al guardar puntaje' });
     }
 });
+
+// Rutas de tareas (CRUD)
+app.use('/api/tareas', tareasRoutes);
 
 app.listen(PORT, () => {
     console.log(`Servidor iniciado en http://localhost:${PORT}`);

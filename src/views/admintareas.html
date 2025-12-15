@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/tareas.css">
+    <title>Administrador de Tareas</title>
+</head>
+<body>
+    <header>
+        <h1>📋 Administrador de Tareas</h1>
+    </header>
+    
+    <main>
+        <div class="container">
+            <!-- Formulario para crear/editar tarea -->
+            <div class="form-container">
+                <h2 id="formTitle">Nueva Tarea</h2>
+                <form id="formTarea">
+                    <input type="hidden" id="tareaId">
+                    <div class="form-group">
+                        <label for="titulo">Título:</label>
+                        <input type="text" id="titulo" required placeholder="Título de la tarea">
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción:</label>
+                        <textarea id="descripcion" rows="4" required placeholder="Descripción de la tarea"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary" id="btnGuardar">Guardar Tarea</button>
+                        <button type="button" class="btn-secondary" id="btnCancelar" style="display: none;">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Lista de tareas -->
+            <div class="tareas-container">
+                <h2>Tareas</h2>
+                <div id="listaTareas" class="lista-tareas">
+                    <!-- Las tareas se cargarán aquí dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Administrador de Tareas - 2025</p>
+    </footer>
+
+    <script src="/js/tareas.js"></script>
+</body>
+</html>
