@@ -12,6 +12,7 @@
         <h1>Numero Oculto</h1>
         <p>Intenta adivinar el numero oculto entre 1 y 100</p>
         <form id="formJuego" class="formJuego">
+            <input class="nombreInput" type="text" id="nombreInput" placeholder="Ingresa tu nombre" required>
             <input class ="numeroInput" type="number" id="numeroInput" placeholder="Ingresa tu numero" required>
             <button type="submit" id="btnVerificar" class="verificar">Adivinar</button>
             <p class="mensaje" id="mensaje"></p>
@@ -20,6 +21,21 @@
         <br>
         <br>
         <button class="reiniciar" id="btnReiniciar">Reiniciar Juego!</button>
+        
+        <div class="puntajes-container">
+            <h2>Tabla de Puntajes</h2>
+            <table id="tablaPuntajes">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Intentos</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody id="puntajesBody">
+                </tbody>
+            </table>
+        </div>
     </main>
     <footer></footer>
     <script src="/js/numero.js"></script>
